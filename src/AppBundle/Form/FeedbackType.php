@@ -16,7 +16,7 @@ class FeedbackType extends AbstractType
         $builder
             ->add('name')
             ->add('email')
-            ->add('message')
+            ->add('message', null, ['required' => false])
         ;
     }
 
