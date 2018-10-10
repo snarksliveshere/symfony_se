@@ -17,5 +17,13 @@ class DefaultController extends Controller
         return $this->render('@App/default/index.html.twig');
     }
 
+    /**
+     * @Route("/feedback", name="feedback")
+     */
+    public function feedback()
+    {
+        return $this->render('@App/default/feedback.html.twig');
+    }
+
 
 }
