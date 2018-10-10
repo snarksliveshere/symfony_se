@@ -49,9 +49,9 @@ class Product
     private $active = true;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="category", type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category")
      */
     private $category;
 
