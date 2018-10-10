@@ -28,6 +28,12 @@ class Category
      */
     private $name;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(type="boolean", options={"default": true})
+     */
+    private $active = true;
 
     /**
      * Get id
@@ -61,6 +67,25 @@ class Category
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isActive(): bool
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param bool $active
+     * @return Category
+     */
+    public function setActive(bool $active)
+    {
+        $this->active = $active;
+
+        return $this;
     }
 }
 
