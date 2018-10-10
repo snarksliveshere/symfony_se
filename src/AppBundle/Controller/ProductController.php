@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Product;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -27,13 +28,11 @@ class ProductController extends Controller
     /**
      * @Route("/products/{id}", name="product_item", requirements={"id": "\d+"})
      * @Template()
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param Product $product
+     * @return array
      */
-    public function showAction(Request $request)
+    public function showAction(Product $product)
     {
-        $id = $request->get('id');
-        $product = $this->getDoctrine()->getRepository('AppBundle:Product')->find($id);
         return ['product' => $product];
     }
 }
