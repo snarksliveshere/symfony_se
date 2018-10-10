@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\FeedbackType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,7 +23,10 @@ class DefaultController extends Controller
      */
     public function feedback()
     {
-        return $this->render('@App/default/feedback.html.twig');
+        $form = $this->createForm(FeedbackType::class );
+        return $this->render('@App/default/feedback.html.twig',[
+            'feedback_form' => $form->createView()
+        ]);
     }
 
 
