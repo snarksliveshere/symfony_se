@@ -49,12 +49,9 @@
     </div>
 </nav>
 <main role="main" class="container">
-
     {% for flash in app.session.flashbag.get('success')  %}
         <div class="alert alert-success">{{ flash }}</div>
     {% endfor %}
-
-
     {% block body %}
     {% endblock %}
 </main>
